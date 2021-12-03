@@ -19,7 +19,7 @@ function checkLogin($email,$password){
         $_SESSION["login_id"] = $res['id'];
         $_SESSION["firstname"] = $res['firstname'];
         $_SESSION["lastname"] = $res['lastname'];
-        header("Location: ../header.php");
+        //header("Location: ../");
     }
 
     else{
@@ -27,7 +27,7 @@ function checkLogin($email,$password){
     }
 
     if(isset($_SESSION["login_id"])){
-        header("Location: ../header.php");
+        //header("Location: ../");
     }
 
     if(isset($_POST['login'])){
