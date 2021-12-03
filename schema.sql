@@ -34,4 +34,4 @@ CREATE TABLE Issues(
 
 GRANT ALL PRIVELEGES ON bugme.* TO 'admin'@'localhost' IDENTIFIED BY 'password123';
 
-INSERT INTO Users (firstname, lastname, password, email, date_joined) VALUES ('Bugme', 'Admin', MD5('password123'), 'admin@bugme.com', '2015-12-03 00:00:00');
+INSERT INTO Users (firstname, lastname, password, email, date_joined) VALUES ('Bugme', 'Admin', MD5('password123'), 'admin@project2.com', '2015-12-03 00:00:00');
