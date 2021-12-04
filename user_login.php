@@ -26,9 +26,9 @@ function checkLogin($email,$password){
         return false;
     }
 
-    if(isset($_SESSION["login_id"])){
+    //if(isset($_SESSION["login_id"])){
         //header("Location: ../");
-    }
+    //}
 
     if(isset($_POST['login'])){
         $username = $_POST['email'];
