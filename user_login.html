@@ -2,16 +2,17 @@
 <html lang = "en">
   <head>
     <meta charset="utf-8">
-    <title>BugMe Issue Tracker</title>
+    <title>BugMe Issue Tracker | Login</title>
     <link rel="stylesheet" href="login_styles.css" media="screen" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    rel="stylesheet"  type='text/css'>
     <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
   </head>
   <body>
     <div class="container">
       <!-- <iframe id="some_name" name="some_name" style="display:none"></iframe> -->
       <form id="form" action="user_login.php" method="post">
-        <h1 id="login"><i class="lg" style="font-size: 1.5em;"></i>&nbsp;&nbsp;&nbsp;&nbsp;LOGIN</h1>
+        <h1 id="login"><i class="fa fa-bug" style="font-size: 1.5em;"></i>&nbsp;&nbsp;&nbsp;&nbsp;LOGIN</h1>
         <div class="form-input">
           <label for="email">Email</label>
           <input type="email" name="email" id="email"></input>
@@ -24,11 +25,6 @@
         <div class="bttn" id="login_bttn">
           <button type="submit" class="bttn" name="login" onclick="redirecting()">Log In</button>
         </div>
-        <script>
-          function redirecting() {
-              window.location = "landing.html"
-          }
-      </script>
       </form>
     </div>
   </body>

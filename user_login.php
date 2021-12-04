@@ -1,40 +1,45 @@
-<?php
+<?php 
+
+header('Access-Control-Allow-Origin: *'); 
 
 require_once 'config.php';
 
-function userLogin($email,$password){
-    if(!(checkLogin($email,$password))){
-        echo "Incorrect email or password";
-        return false;
+try {
+
+    $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+  } catch(PDOException $e) {
+    echo $e->getMessage();
+  }
+
+  session_start();
+
+  if (isset($_POST["login"])){
+      $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+      $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+      $password = md5($password);
+
+
+      try {
+        $stmt = $conn->query("SELECT * FROM users WHERE email = '$email' AND password = '$password'");
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        if (count($results) === 1) {
+            $_SESSION['userid'] = $results[0]['id'];
+        } else {
+            echo '<script>alert("Failed")</script>';
+        }
+    } catch(PDOException $e) {
+        echo $sql . "<br>" . $e->getMessage();
     }
+  }
+
+  if (isset($_SESSION['userid'])) {
+    echo 'sessionid'.$_SESSION['userid'];
+    header("location:../home.html");
 }
-
-function checkLogin($email,$password){
-    $conn = new PDO('mysql:host=localhost; dbname = bugme;', 'root', 'password');
-    $queryLogin = "SELECT 'id', 'firstname', 'lastname' FROM 'Users' WHERE 'email' = '$email'";
-    $stmt = $conn->query($queryLogin);
-    $res = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    if($res){
-        $_SESSION["login_id"] = $res['id'];
-        $_SESSION["firstname"] = $res['firstname'];
-        $_SESSION["lastname"] = $res['lastname'];
-        //header("Location: ../");
-    }
-
-    else{
-        return false;
-    }
-
-    //if(isset($_SESSION["login_id"])){
-        //header("Location: ../");
-    //}
-
-    if(isset($_POST['login'])){
-        $username = $_POST['email'];
-        $password = $_POST['password'];
-
-        userLogin($email,$password);
-    }
-}
+  
 ?>
+
+
