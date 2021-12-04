@@ -39,7 +39,6 @@ try {
     echo 'sessionid'.$_SESSION['userid'];
     header("location:../home.html");
 }
-  
 ?>
 
 
