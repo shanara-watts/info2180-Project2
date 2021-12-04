@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$dbName = 'adduser-superstar211';
+$dbName = 'bugme';
 $dbUser = 'root';
 $dbPass = '';
 
