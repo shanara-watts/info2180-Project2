@@ -1,0 +1,114 @@
+ 
+html{
+    height: 100%;
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: grid;
+    grid-template-columns: 20% auto;
+    grid-template-rows: 10% auto;
+    height: 100%;
+    margin: auto;  
+}
+
+ 
+ 
+
+.header{
+    display: flex;
+    color: white;
+    background-color: black;
+    grid-column: 1 / 3;
+    align-items: center;
+    
+}
+
+.header h1{
+    
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+.header i{
+    margin-left: 20px;
+    font-size: x-large;
+}
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    background-color: #d3d3d3;
+    grid-row: 2;
+    padding: 15px;
+}
+
+
+.sidebar div{
+    margin-top: 20px;
+}
+
+.sidebar a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #000000;
+}
+
+.body{
+    margin-left: 25px;
+}
+
+.body h1{
+    margin-top: -45px;
+}
+
+.newIssueButton, button {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.newIssueButton {
+    margin-left: 650px;
+    margin-top: 35px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(45,165,98);
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 18px  45px;
+    
+     
+      
+}
+
+
+.button {
+    padding: 10;
+    border: none;
+    background: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.allbutton {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(27,106,201);
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+th {
+    background-color: rgb(223, 223, 223);
+}
+
+table {
+    margin: 10;
+    padding: 10;
+    width: 95%;
+    border-spacing: 0;
+}
+
+
