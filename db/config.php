@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost';
 $dbName = 'bugme';
-$dbUser = 'root';
-$dbPass = '';
+$dbUser = 'admin';
+$dbPass = 'password123';
 
 $conect = mysqli_connect($host,$dbUser,$dbPass,$dbName);
 

@@ -2,7 +2,10 @@
 
 header('Access-Control-Allow-Origin: *'); 
 
-require_once 'config.php';
+
+
+require_once 'loginconnection.php';
+session_start();
 
 try {
 
@@ -13,7 +16,7 @@ try {
     echo $e->getMessage();
   }
 
-  session_start();
+  
 
   if (isset($_POST["login"])){
       $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
